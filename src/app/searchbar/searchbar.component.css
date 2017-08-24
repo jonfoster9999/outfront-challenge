@@ -1,0 +1,8 @@
+.navbar-brand, .navbar-link {
+	color: white;
+	font-size: 1.8em;
+}
+
+.overlay-pic {
+	border: 10px solid red;
+}

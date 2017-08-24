@@ -1,0 +1,15 @@
+<div class="container" >
+	<div *ngIf="photoSet.length == 0">
+		<h1 class="text-center">Get Searching!</h1>
+		<img class="image-center" src="https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif">
+	</div>
+	<div *ngIf="photoSet.length > 1">
+		<pagination-controls (pageChange)="p =$event" ></pagination-controls>
+		<hr>
+	</div>
+  	<img class="thumb" *ngFor="let photo of photoSet | paginate: { itemsPerPage: 28, currentPage: p}" src="{{ photo['images']['original']['url']}}" (click)="createOverlay(photo)">
+</div>
+
+<div id="overlay">
+	
+</div>

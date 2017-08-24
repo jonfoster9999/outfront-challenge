@@ -1,0 +1,29 @@
+.thumb {
+    width: 150px;
+    margin-top:50px;
+    margin-left: 5px; 
+    margin-right: 5px;
+
+     text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+.image-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .8);
+	display: none;
+}
+
+
+
