@@ -11,13 +11,15 @@ import { DataService } from './services/data.service';
 import { DisplayComponent } from './display/display.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutesModule } from './app.routes';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
     DisplayComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

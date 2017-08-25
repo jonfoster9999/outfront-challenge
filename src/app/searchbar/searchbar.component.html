@@ -14,9 +14,16 @@
 
                     </ul>
                     <form class="navbar-form navbar-right" target="_self" *ngIf="showSearch">
-                        <div class="form-group"> 
+                        <div class="form-group">
+                            <select name="num-results" id="num-results" class="form-control" [(ngModel)]="selectedValue">
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select> 
                             <input class="form-control search-field" type="search" name="search" id="search-field" placeholder="Search Giphy.." [(ngModel)]="searchTerm">
-                            <button class="btn btn-success btn-md" (click)="searchGiphy()"><span class="glyphicon glyphicon-search"></span> Search</button>
+
+                            <button class="btn btn-success btn-md" (click)="searchGiphy()"><span class="glyphicon glyphicon-search"></span></button>
                             <button type="button" class="btn btn-warning" (click)="clear()">Clear</button>
                         </div>
                     </form>

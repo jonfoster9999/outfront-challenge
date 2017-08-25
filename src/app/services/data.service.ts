@@ -5,18 +5,26 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DataService {
   
-  apiUrl: String = "http://api.giphy.com/v1/gifs/search?q=<search_query>&api_key=dc6zaTOxFJmzC"
+  searchString1 = "http://api.giphy.com/v1/gifs/search?q="
+  searchString2 = "&api_key=dc6zaTOxFJmzC&limit="
   photoArray = [];
 
-  prepareSearchUrl(searchTerm) {
-  	var apiArr = this.apiUrl.split("<search_query>");
-  	return apiArr[0] + searchTerm + apiArr[1];
-  }
 
   constructor(private http: Http) { }
 
-  getPictures(searchTerm) {
-  	return this.http.get("http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC&limit=100")
+  validateSearch(term) {
+    return /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/.test(term);
+  }
+
+  constructQuery(term) {
+    term = term.replace(/  +/g, ' ');
+    return term.split(" ").join("+");
+  }
+
+  getPictures(searchTerm, number) {
+    searchTerm = this.constructQuery(searchTerm);
+    console.log(searchTerm);
+  	return this.http.get(this.searchString1 + searchTerm + this.searchString2 + number)
   }
 
   updatePhotos = new Subject();

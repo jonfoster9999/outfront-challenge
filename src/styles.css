@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 .overlay-pic {
 	height: 400px;
 	display: block;
@@ -15,3 +20,5 @@
 	text-align: center;
 	padding-left: 0px;
 }
+
+
