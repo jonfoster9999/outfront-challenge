@@ -10,15 +10,3 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-const forceSSL = function() {
-  return function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'http') {
-      return res.redirect(
-       ['http://', req.get('Host'), req.url].join('')
-      );
-    }
-    next();
-  }
-}
-
-app.use(forceSSL());

@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DataService {
   
-  searchString1 = "http://api.giphy.com/v1/gifs/search?q="
+  searchString1 = "https://api.giphy.com/v1/gifs/search?q="
   searchString2 = "&api_key=dc6zaTOxFJmzC&limit=";
 
   constructor(private http: Http) { }
