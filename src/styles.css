@@ -21,4 +21,29 @@ html {
 	padding-left: 0px;
 }
 
+.flasher {
+	position: relative;
+	top: -25px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
+
+.hide-me {
+	display: none;
+}
+
+/* Manually style collapsed navbar elements */
+@media only screen and (max-width : 768px) {
+	select#num-results {
+		margin-bottom: 5px;
+		width: 50%;
+	}
+
+	input#search-field {
+		margin-bottom: 5px;
+		width: 50%;
+	}
+}
+
 

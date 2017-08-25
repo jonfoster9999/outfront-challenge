@@ -3,15 +3,12 @@
         <nav class="navbar navbar-default navigation-clean-search">
             <div class="container">
                 <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Giphy Search</a>
-
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
-
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a [routerLink]="['home']">Home</a></li>
                         <li><a [routerLink]="['about']">About</a></li>
-
                     </ul>
                     <form class="navbar-form navbar-right" target="_self" *ngIf="showSearch">
                         <div class="form-group">
@@ -22,7 +19,6 @@
                                 <option value="200">200</option>
                             </select> 
                             <input class="form-control search-field" type="search" name="search" id="search-field" placeholder="Search Giphy.." [(ngModel)]="searchTerm">
-
                             <button class="btn btn-success btn-md" (click)="searchGiphy()"><span class="glyphicon glyphicon-search"></span></button>
                             <button type="button" class="btn btn-warning" (click)="clear()">Clear</button>
                         </div>

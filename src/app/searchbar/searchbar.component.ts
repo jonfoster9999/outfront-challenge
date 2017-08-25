@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Http } from '@angular/http';
+import { Http} from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 declare var $ :any;
 
@@ -18,7 +19,8 @@ export class SearchbarComponent implements OnInit {
 
   constructor(private dataService: DataService, 
               private http: Http,
-              private route: Router
+              private route: Router,
+              private flashMessager: FlashMessagesService
           ) { }
 
   ngOnInit() {
@@ -29,6 +31,8 @@ export class SearchbarComponent implements OnInit {
             this.showSearch = true;
           } else {
             this.showSearch = false;
+            //hide the error message if you switch quickly to the about page
+            this.dataService.clearErrors();
           }
         }
       })
@@ -43,12 +47,14 @@ export class SearchbarComponent implements OnInit {
     		this.dataService.updatePhotos.next(body_data);
     	}) 
     } else {
-      alert("invalid search term")
+      this.dataService.clearErrors();
+      this.flashMessager.show("Enter a valid search term", {cssClass: 'alert-danger flasher'})
     }
   }
 
   clear() {
     this.searchTerm = '';
+    this.dataService.clearErrors();
     this.dataService.updatePhotos.next([])
   }
 

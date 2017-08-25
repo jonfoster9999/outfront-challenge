@@ -1,18 +1,15 @@
-.thumb {
-    width: 150px;
-    margin-top:50px;
-    margin-left: 5px; 
-    margin-right: 5px;
-
-     text-align: justify;
-    -ms-text-justify: distribute-all-lines;
-    text-justify: distribute-all-lines;
+.thumb:hover {
+	border: 5px solid lightgreen;
 }
 
 .image-center {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.pag {
+	height: 30px;
 }
 
 #overlay {
@@ -25,5 +22,32 @@
 	display: none;
 }
 
+.picture-container { 
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+}
+.picture-container div { 
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; 
+  width: 200px; 
+  margin: .5vw; 
+}
+.picture-container div img { 
+  width: 100%; 
+  height: auto; 
+}
+@media screen and (max-width: 400px) {
+  .picture-container div { margin: 0; }
+  .picture-container { padding: 0; }
+  
+}
 
 

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpModule } from '@angular/http';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpModule,
     NgxPaginationModule,
-    AppRoutesModule
+    AppRoutesModule,
+    FlashMessagesModule
   ],
   providers: [
   	DataService

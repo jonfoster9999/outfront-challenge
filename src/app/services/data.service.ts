@@ -6,9 +6,7 @@ import { Subject } from 'rxjs/Subject';
 export class DataService {
   
   searchString1 = "http://api.giphy.com/v1/gifs/search?q="
-  searchString2 = "&api_key=dc6zaTOxFJmzC&limit="
-  photoArray = [];
-
+  searchString2 = "&api_key=dc6zaTOxFJmzC&limit=";
 
   constructor(private http: Http) { }
 
@@ -23,8 +21,17 @@ export class DataService {
 
   getPictures(searchTerm, number) {
     searchTerm = this.constructQuery(searchTerm);
-    console.log(searchTerm);
   	return this.http.get(this.searchString1 + searchTerm + this.searchString2 + number)
+  }
+
+  clearErrors() {
+    var els = <HTMLCollection>document.querySelectorAll('.alert-danger');
+    if (els) {
+      for(var i = 0, n = els.length; i < n; i++) {
+        var el = <HTMLElement>els[i]
+        el.style.display = 'none'
+      }
+    }
   }
 
   updatePhotos = new Subject();

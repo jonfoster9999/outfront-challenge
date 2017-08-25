@@ -1,14 +1,21 @@
+<div class="pag" *ngIf="photoSet.length > 1">
+	<pagination-controls (pageChange)="p =$event" ></pagination-controls>
+	<hr>
+</div>
+
 <div class="container" >
 	<div *ngIf="photoSet.length == 0">
 		<h1 class="text-center">Get Searching!</h1>
 		<img class="image-center" src="https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif">
 	</div>
-	<div *ngIf="photoSet.length > 1">
-		<pagination-controls (pageChange)="p =$event" ></pagination-controls>
-		<hr>
+	<div class="picture-container">
+		<div *ngFor="let photo of photoSet | paginate: { itemsPerPage: 28, currentPage: p}"><img class="thumb" src="{{ photo['images']['fixed_width_small']['url']}}" (click)="createOverlay(photo)"></div>
 	</div>
-  	<img class="thumb" *ngFor="let photo of photoSet | paginate: { itemsPerPage: 28, currentPage: p}" src="{{ photo['images']['original']['url']}}" (click)="createOverlay(photo)">
+
+
 </div>
+<br>
+<br>
 
 <div id="overlay">
 	

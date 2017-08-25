@@ -10,6 +10,9 @@ export class DisplayComponent implements OnInit {
 
   photoSet: {} = [];
 
+  //for pagination
+  p: number = 1;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -20,8 +23,6 @@ export class DisplayComponent implements OnInit {
   		})
   }
 
-  p: number = 1;
-
   createOverlay(photo) {
   	var img = document.createElement('img');
   	img.setAttribute('src', photo['images']['original']['url']);
@@ -29,11 +30,12 @@ export class DisplayComponent implements OnInit {
   	console.log(img)
   	var overlay = document.getElementById('overlay');
   	overlay.appendChild(img);
- 	overlay.style.display = 'block';
- 	overlay.addEventListener('click', function(){
- 		overlay.style.display = 'none'
- 		overlay.innerHTML = '';
- 	}, false)
-  }
+ 	  overlay.style.display = 'block';
 
+    //click listener to dismiss overlay
+ 	  overlay.addEventListener('click', function(){
+ 		  overlay.style.display = 'none'
+ 		  overlay.innerHTML = '';
+ 	  }, false)
+  }
 }
