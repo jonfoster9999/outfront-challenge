@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class DisplayComponent implements OnInit {
 
-  photoSet: {} = [null];
+  photoSet: {} = [];
 
   //for pagination
   p: number = 1;
@@ -18,7 +18,6 @@ export class DisplayComponent implements OnInit {
   ngOnInit() {
   	this.dataService.updatePhotos
   		.subscribe((data) => {
-  			console.log(data)
   			this.photoSet = data;
   		})
   }
