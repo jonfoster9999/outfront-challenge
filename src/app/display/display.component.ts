@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class DisplayComponent implements OnInit {
 
-  photoSet: {} = [];
+  photoSet: {} = [null];
 
   //for pagination
   p: number = 1;
