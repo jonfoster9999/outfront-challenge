@@ -5,11 +5,11 @@ html {
 }
 
 .overlay-pic {
-	height: 400px;
+	width: 40%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 130px;
+	margin-top: 120px;
 }
 
 .thumb:hover {
