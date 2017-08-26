@@ -29,7 +29,7 @@ export class DisplayComponent implements OnInit {
   	console.log(img)
   	var overlay = document.getElementById('overlay');
   	overlay.appendChild(img);
- 	  overlay.style.display = 'block';
+ 	  overlay.style.display = 'flex';
 
     //click listener to dismiss overlay
  	  overlay.addEventListener('click', function(){
