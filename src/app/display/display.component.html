@@ -9,7 +9,7 @@
 		<img class="image-center" src="https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif">
 	</div>
 	<div class="picture-container">
-		<div *ngFor="let photo of photoSet | paginate: { itemsPerPage: 28, currentPage: p}"><img class="thumb" src="{{ photo['images']['fixed_width_small']['url']}}" (click)="createOverlay(photo)"></div>
+		<div *ngFor="let photo of photoSet | paginate: { itemsPerPage: 28, currentPage: p}"><img class="thumb" src="{{ photo['images']['downsized_medium']['url']}}" (click)="createOverlay(photo)"></div>
 	</div>
 </div>
 <br>

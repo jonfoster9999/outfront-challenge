@@ -19,6 +19,7 @@ export class DisplayComponent implements OnInit {
   	this.dataService.updatePhotos
   		.subscribe((data) => {
   			this.photoSet = data;
+        console.log(this.photoSet)
   		})
   }
 
