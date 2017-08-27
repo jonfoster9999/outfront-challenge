@@ -48,14 +48,14 @@ export class SearchbarComponent implements OnInit {
     	}) 
     } else {
       this.dataService.clearErrors();
-      this.flashMessager.show("Enter a valid search term", {cssClass: 'alert-danger flasher'})
+      this.flashMessager.show("Enter a valid search term", {cssClass: 'alert-danger flasher'});
     }
   }
 
   clear() {
     this.searchTerm = '';
     this.dataService.clearErrors();
-    this.dataService.updatePhotos.next([])
+    this.dataService.updatePhotos.next([]);
   }
 
 }

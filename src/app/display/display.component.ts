@@ -19,7 +19,6 @@ export class DisplayComponent implements OnInit {
   	this.dataService.updatePhotos
   		.subscribe((data) => {
   			this.photoSet = data;
-        console.log(this.photoSet)
   		})
   }
 
@@ -27,14 +26,13 @@ export class DisplayComponent implements OnInit {
   	var img = document.createElement('img');
   	img.setAttribute('src', photo['images']['original']['url']);
   	img.setAttribute('class', "overlay-pic");
-  	console.log(img)
   	var overlay = document.getElementById('overlay');
   	overlay.appendChild(img);
  	  overlay.style.display = 'flex';
 
     //click listener to dismiss overlay
  	  overlay.addEventListener('click', function(){
- 		  overlay.style.display = 'none'
+ 		  overlay.style.display = 'none';
  		  overlay.innerHTML = '';
  	  }, false)
   }

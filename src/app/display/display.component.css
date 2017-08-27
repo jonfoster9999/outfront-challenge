@@ -36,6 +36,7 @@
   display: -webkit-box;
   display: flex;
 }
+
 .picture-container div { 
   -webkit-box-flex: auto;
   -ms-flex: auto;
@@ -43,10 +44,12 @@
   width: 200px; 
   margin: .5vw; 
 }
+
 .picture-container div img { 
   width: 100%; 
   height: auto; 
 }
+
 @media screen and (max-width: 400px) {
   .picture-container div { margin: 0; }
   .picture-container { padding: 0; }
